@@ -1,53 +1,16 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        ManajemenAnggota manajemenAnggota = new ManajemenAnggota();
-        Scanner scanner = new Scanner(System.in);
+        Kucing kucing = new Kucing();
+        Kambing kambing = new Kambing();
+        Ayam ayam = new Ayam();
 
-        while (true) {
-            System.out.println("Menu:");
-            System.out.println("1. Tambah anggota");
-            System.out.println("2. Hapus anggota");
-            System.out.println("3. Edit anggota");
-            System.out.println("4. Tampilkan anggota");
-            System.out.println("Pilih opsi:");
+        System.out.print("Suara Kucing: ");
+        kucing.ciriSuara();
 
-            int opsi = scanner.nextInt();
-            scanner.nextLine();
+        System.out.print("Suara Kambing: ");
+        kambing.ciriSuara();
 
-            switch (opsi) {
-                case 1:
-                    System.out.println("Masukkan nama:");
-                    String nama = scanner.nextLine();
-                    System.out.println("Masukkan kode anggota:");
-                    String kodeAnggota = scanner.nextLine();
-                    System.out.println("Masukkan level keahlian:");
-                    String levelKeahlian = scanner.nextLine();
-                    manajemenAnggota.tambahAnggota(new Anggota(nama, kodeAnggota, levelKeahlian));
-                    break;
-                case 2:
-                    System.out.println("Masukkan kode anggota yang ingin dihapus:");
-                    String kodeAnggotaHapus = scanner.nextLine();
-                    manajemenAnggota.hapusAnggota(kodeAnggotaHapus);
-                    break;
-                case 3:
-                    System.out.println("Masukkan kode anggota yang ingin diedit:");
-                    String kodeAnggotaEdit = scanner.nextLine();
-                    System.out.println("Masukkan nama baru:");
-                    String namaBaru = scanner.nextLine();
-                    System.out.println("Masukkan level keahlian baru:");
-                    String levelKeahlianBaru = scanner.nextLine();
-                    manajemenAnggota.editAnggota(kodeAnggotaEdit, namaBaru, levelKeahlianBaru);
-                    break;
-                case 4:
-                    manajemenAnggota.tampilkanAnggota();
-                    break;
-                default:
-                    System.out.println("Opsi tidak valid");
-            }
-        }
+        System.out.print("Suara Ayam: ");
+        ayam.ciriSuara();
     }
 }
